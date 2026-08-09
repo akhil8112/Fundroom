@@ -307,46 +307,7 @@ npm run dev
 
 ---
 
-## Deployment Guide
 
-### Frontend Deployment (Vercel)
-
-```bash
-cd client
-npm run build
-# Deploy the dist/ folder to Vercel, Netlify, or any static hosting
-```
-
-**Vercel settings:**
-- Build Command: `npm run build`
-- Output Directory: `dist`
-- Environment Variable: `VITE_API_URL=https://your-backend-url.com/api`
-
-### Backend Deployment (Render)
-
-1. Push to GitHub
-2. Create a new Web Service on Render
-3. Connect your repo, set root directory to `server`
-4. Build Command: `npm install && npx prisma generate && npx prisma migrate deploy`
-5. Start Command: `npm run build && npm start`
-6. Add environment variables (DATABASE_URL, JWT_SECRET, etc.)
-
-### Database (Neon / Supabase)
-
-1. Create a free PostgreSQL instance on [Neon](https://neon.tech) or [Supabase](https://supabase.com)
-2. Copy the connection string
-3. Set as `DATABASE_URL` in your backend environment
-
-### AWS Deployment (Bonus)
-
-For AWS deployment:
-1. **EC2**: Set up a t2.micro instance with Node.js
-2. **RDS**: Create a PostgreSQL RDS instance (free tier)
-3. **S3 + CloudFront**: Host the React frontend as a static site
-4. Use PM2 or systemd to manage the Node.js process
-5. Set up Nginx as reverse proxy for the API
-
----
 
 ## Docker Setup
 
